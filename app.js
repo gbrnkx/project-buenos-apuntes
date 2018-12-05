@@ -59,6 +59,7 @@ hbs.registerHelper('ifUndefined', (value, options) => {
   }
 });
   
+hbs.registerPartials(__dirname + '/views/partials');
 
 // default value for title local
 //app.locals.title = 'Buenos apuntes';

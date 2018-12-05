@@ -158,5 +158,320 @@ p {
 
 #fileElem {
   display: none; }
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #00B7FF; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  width: 100%;
+  background-color: rgba(52, 69, 120, 0.9);
+  min-width: 400px; }
+
+.hambur {
+  display: none; }
+
+.linkDown {
+  background-color: white;
+  position: relative;
+  top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2px;
+  margin-top: 2px; }
+
+.linkDown a {
+  text-decoration: none;
+  color: goldenrod;
+  font-weight: 900;
+  margin: 20px; }
+
+#listaa {
+  display: none; }
+
+@media only screen and (max-width: 790px) {
+  .vista {
+    display: none; }
+  .hambur {
+    display: block;
+    position: fixed;
+    right: 11vw;
+    top: 2.5vh;
+    width: 6vh; } }
+
+/*ANIMATION*/
+.logoA:hover {
+  animation: pulse 1.5s ease-in-out infinite; }
+
+@keyframes pulse {
+  0% {
+    transform: translateY(-10px); }
+  50% {
+    transform: translateY(10px); }
+  100% {
+    transform: translateY(-10px); } }
+
+/*A ver si jala*/
+h1,
+h2,
+p {
+  text-align: center; }
+
+h1 {
+  padding: 20vh 0 2vh 0;
+  font-size: 7.8vh; }
+
+h2 {
+  font-size: 5vh;
+  padding: 4vw; }
+
+nav {
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  font-size: 2.5vh; }
+
+.profilePic {
+  float: right;
+  border-radius: 50%;
+  width: 8vh;
+  height: 8vh;
+  vertical-align: middle;
+  margin-top: -5vh; }
+
+nav > div {
+  float: right;
+  margin: 3vh 1vw;
+  padding-right: 5vw; }
+
+nav div ul {
+  padding-right: 10vw; }
+
+ul > li {
+  display: inline;
+  list-style: none;
+  padding: 0 2vw;
+  font-size: 1em; }
+
+header {
+  background-position-y: 10vh;
+  padding-top: 18vh;
+  background-image: url("https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2017/10/onenote%20note%20taking.jpg?itok=bFauGScR");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 70vh;
+  color: white; }
+
+header input {
+  width: 80%;
+  height: 4vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 8%;
+  border: 0;
+  padding: 1vw;
+  font-size: 1.7em;
+  color: whitesmoke;
+  border-radius: 20px;
+  outline-color: rgba(0, 0, 0, 0); }
+
+header div {
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-top: -15vh;
+  height: 85vh; }
+
+.logoA {
+  float: left;
+  width: 25vh;
+  padding: 1.5vh 6vw;
+  vertical-align: middle; }
+
+.linkUp {
+  text-decoration: none;
+  color: goldenrod;
+  font-weight: 900; }
+
+.apuntes {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column; }
+
+.apuntes h2 {
+  margin-top: 5vh;
+  color: whitesmoke; }
+
+.apuntes button {
+  margin: 4vh 0 6vh;
+  width: 40vw;
+  height: 8vh;
+  background-color: #2a3864;
+  border: 0;
+  border-radius: 10vw;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  outline-color: rgba(0, 0, 0, 0); }
+
+.apuntes button img {
+  margin: 0;
+  padding: 0;
+  width: 6vh;
+  height: auto; }
+
+.subirAPuntes {
+  width: 100%;
+  height: 50vh; }
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.cards div {
+  width: 23vw;
+  min-width: 220px;
+  background-color: white;
+  margin: 4vh 4vw;
+  border-radius: 13%;
+  padding: 2vh; }
+
+.cards img {
+  width: 20vw;
+  padding: 2vw;
+  max-width: 200px; }
+
+.cards div p {
+  font-size: 2vh; }
+
+.search2 {
+  /* background-color: whitesmoke; */
+  padding-top: 10vh;
+  width: 100%;
+  height: 25vh; }
+
+.search2 div {
+  display: flex;
+  flex-direction: row;
+  height: 25vh;
+  justify-content: center;
+  align-items: center; }
+
+.searchText {
+  color: whitesmoke;
+  font-size: 2vw;
+  font-size: 4vmin;
+  width: 27%; }
+
+.searchInput {
+  width: 70%; }
+
+.searchInput input {
+  height: 6vh;
+  width: 60vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 13px;
+  border: 0;
+  font-size: 3.2vmin;
+  font-size: 2vmax;
+  padding: 1vh;
+  color: whitesmoke;
+  outline-color: rgba(0, 0, 0, 0); }
+
+.filtros {
+  display: flex;
+  flex-direction: row;
+  /* background-color: red; */
+  justify-content: space-around;
+  height: 20vh;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  height: auto;
+  margin-bottom: 10vh; }
+
+.university {
+  background-color: #00979f;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 8vh;
+  align-items: center;
+  min-width: 300px;
+  margin: 1vh;
+  border-radius: 13px; }
+
+.university img {
+  width: 6vh;
+  border-radius: 20%; }
+
+.select {
+  background-color: #00979f;
+  border: 0;
+  height: 7vh;
+  width: 190px;
+  font-size: 4vmin;
+  font-size: 2vmax;
+  border-radius: 13px;
+  color: whitesmoke;
+  outline-color: rgba(0, 0, 0, 0); }
+
+.renderPreview > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: 2vh; }
+
+.cardPreview {
+  background-color: #352c5a;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 13px;
+  color: white; }
+
+.upCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1vh; }
+
+.upCard h3,
+p {
+  text-align: left;
+  margin: 1.2vh; }
+
+.upCard h3 {
+  font-size: 3vh; }
+
+.upCard p {
+  font-size: 2vh; }
+
+.vizualizacion {
+  display: flex;
+  flex-direction: row; }
+
+.ojito {
+  width: 30px;
+  height: 3vh;
+  padding-right: 1vw;
+  margin-top: 0.9vh; }
+
+.downPreview {
+  font-weight: 400;
+  font-size: 2vh; }
+
+.backImage {
+  margin-top: 10vh;
+  background-color: yellow; }
 
 /*# sourceMappingURL=style.css.map */
