@@ -15,7 +15,7 @@ const flash      = require("connect-flash");
     
 
 mongoose
-  .connect('mongodb://localhost/project-buenos-apuntes', {useNewUrlParser: true})
+  .connect(process.env.mlabDB, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -59,9 +59,10 @@ hbs.registerHelper('ifUndefined', (value, options) => {
   }
 });
   
+hbs.registerPartials(__dirname + '/views/partials');
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+/* app.locals.title = 'Express - Generated with IronGenerator'; */
 
 
 // Enable authentication using session + passport
