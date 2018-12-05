@@ -1,0 +1,162 @@
+#container-global {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; }
+
+#container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100vw;
+  margin-top: -10px;
+  margin-left: -10px;
+  background-color: #2d5181; }
+
+#logo-top-left {
+  height: 50px;
+  width: 105px;
+  margin-top: 5px;
+  margin-left: 50px; }
+
+#nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 30vw; }
+
+.text-nav {
+  color: white;
+  font-family: Calibri;
+  text-decoration: none; }
+
+#circle-profile-pic {
+  border-radius: 50%; }
+
+#user-top-right {
+  border-radius: 50%;
+  border: 3px solid white;
+  height: 35px;
+  width: 35px; }
+
+.upload-button {
+  border-radius: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4ccdb4;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px; }
+
+#anchor-exit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+#search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+#search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 65px;
+  width: 480px;
+  background-color: #edbf57;
+  border-radius: 20px; }
+
+#input-search-box {
+  height: 50px;
+  width: 400px;
+  background-color: white;
+  font-size: 17px;
+  text-align: left;
+  text-indent: 5px;
+  border: 0px;
+  border-radius: 15px;
+  outline: none; }
+
+#search-button {
+  height: 55px;
+  width: 55px;
+  background-color: #edbf57;
+  border: 0px; }
+
+#container-upload-data-input {
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 450px;
+  width: 600px;
+  background-color: #e7eaed; }
+
+#container-data-input {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-between; }
+
+#div-school-subject-period {
+  display: flex;
+  float: row;
+  justify-content: space-between; }
+
+#input-title {
+  height: 25px;
+  width: 400px; }
+
+#upload-apunte-button {
+  border-radius: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #edbf57;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px; }
+
+#drop-area {
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  font-family: calibri;
+  padding: 20px; }
+
+#drop-area.highlight {
+  border-color: purple; }
+
+p {
+  margin-top: 0; }
+
+.my-form {
+  margin-bottom: 10px; }
+
+#gallery {
+  margin-top: 10px; }
+
+#gallery img {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  vertical-align: middle; }
+
+.button {
+  display: inline-block;
+  padding: 10px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc; }
+
+.button:hover {
+  background: #ddd; }
+
+#fileElem {
+  display: none; }
+
+/*# sourceMappingURL=style.css.map */

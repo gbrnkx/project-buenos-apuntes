@@ -1,8 +1,197 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+#container-global{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+//background-image: url('https://res.cloudinary.com/gbrnkx/image/upload/v1543946754/buenos-apuntes/logos/fondo_index.png');
 }
 
-a {
-  color: #00B7FF;
+#container-header{
+  //position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //size: 100%;
+  height: 60px;
+  width: 100vw;
+  margin-top: -10px;
+  margin-left: -10px;
+  //margin-right: 1000px;
+  background-color:rgb(45, 81, 129);
 }
+#logo-top-left{
+  height: 50px;
+  width: 105px;
+  margin-top: 5px;
+  margin-left: 50px;
+}
+
+#nav-header{
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+width: 30vw;
+//margin-right: 400px;
+}
+
+.text-nav{
+  color: white;
+  font-family: Calibri;
+  text-decoration: none;
+}
+
+#circle-profile-pic{
+  border-radius: 50%;
+  
+}
+#user-top-right{
+  border-radius: 50%;
+  border: 3px solid white;
+  height: 35px;
+  width: 35px;
+  //margin-top: 5px;
+  //margin-left: 50px;
+  //margin-right: -400px;
+}
+
+.upload-button{
+  border-radius: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(76,205,180);
+  border: 1px solid white;
+  color:white;
+  border-radius: 10px;
+}
+
+#anchor-exit{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //font-size: 12px
+}
+
+#search-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#search-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 65px;
+  width: 480px;
+  background-color:rgb(237, 191, 87);
+  border-radius: 20px;
+}
+
+#input-search-box{
+  height: 50px;
+  width: 400px;
+  background-color: white;
+  font-size: 17px;
+  text-align: left;
+  text-indent: 5px;
+  border: 0px;
+  border-radius: 15px;
+  outline:none;
+  
+}
+
+#search-button{
+  height: 55px;
+  width: 55px;
+  background-color:rgb(237, 191, 87);
+  border: 0px;
+}
+
+//Upload view
+#container-upload-data-input{
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column ;
+  justify-content: space-evenly;
+  height: 450px;
+  width: 600px;
+  background-color: rgb(231, 234, 237);
+}
+
+#container-data-input{
+  display: flex;
+  align-items:stretch;
+  flex-direction: column ;
+  justify-content: space-between;
+}
+
+#div-school-subject-period{
+  display: flex;
+  float: row;
+  justify-content: space-between;
+}
+
+#input-title{
+height: 25px;
+width: 400px;
+}
+
+#upload-apunte-button{
+  border-radius: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(237,191,87);
+  border: 1px solid white;
+  color:white;
+  border-radius: 10px;
+}
+
+//End upload view
+
+
+//Drag and drop
+#drop-area {
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  //width: 400px;
+  font-family: calibri;
+  //margin: 100px auto;
+  padding: 20px;
+}
+#drop-area.highlight {
+  border-color: purple;
+}
+p {
+  margin-top: 0;
+}
+.my-form {
+  margin-bottom: 10px;
+}
+#gallery {
+  margin-top: 10px;
+}
+#gallery img {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.button {
+  display: inline-block;
+  padding: 10px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.button:hover {
+  background: #ddd;
+}
+#fileElem {
+  display: none;
+}
+
+//End drag and drop

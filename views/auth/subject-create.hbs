@@ -1,0 +1,29 @@
+<form action="/auth/subject-create" method="POST">
+    <select id="school" name="school">
+      <option value="none">Selecciona una escuela</option>
+      {{#each teachers}}
+      <option value="{{this.idSchool._id}}">{{this.idSchool.short_name}}</option>
+      {{/each}}
+    </select>
+    <select name="teacher" id="teacher">
+      <option value="none">Selecciona un docente</option>
+      {{#each teachers}}
+      <option value="{{this._id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+    <label for="period">Periodo</label>
+    <input type="text" name="period" id="period">
+    <label for="subject">Materia</label>
+    <input type="text" name="name" id="subject">
+    <input type="submit">
+</form>
+
+
+<script>
+  var teacher = []
+
+      teacher.push({{{teachers}}})
+  
+  
+  console.log(teacher)
+</script>

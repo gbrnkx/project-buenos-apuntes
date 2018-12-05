@@ -8,16 +8,33 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
-
-  <nav>
-    <a href="/">Home</a>
-    <a href="/auth/login">Login</a>
-    <a href="/auth/signup">Signup</a>
-    <a href="/auth/logout">Logout</a>
-  </nav>
-
+<div id="container-global">
+  <div id="container-header">
+  <div>
+    <img onclick="" id="logo-top-left" src="https://res.cloudinary.com/gbrnkx/image/upload/v1543887957/buenos-apuntes/logos/buenos_apuntes_logo.png" alt="buenos_apuntes_logo">
+  </div>
+      <nav id="nav-header">
+        {{#if user}}
+          <button class="upload-button" onclick="window.location.href='/auth/upload'"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904309/buenos-apuntes/logos/upload-icon.png" alt="upload-icon" height="27px" width="27px">SUBIR APUNTE</button>
+          <a class="text-nav" id="anchor-exit" href="/auth/logout"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904753/buenos-apuntes/logos/logout-icon.png" alt="logout-icon" height="27px" width="27px"></a>
+          <a class="text-nav" href="/auth/logout">MI CUENTA</a>
+          <img id="user-top-right" src="{{user.photo}}" alt="user_pic">
+        {{else}}
+          <button class="upload-button" onclick="window.location.href='/auth/upload'"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904309/buenos-apuntes/logos/upload-icon.png" alt="upload-icon" height="27px" width="27px">SUBIR APUNTE</button>
+          <a class="text-nav" href="/auth/login">INICIA SESIÓN</a>
+          <a class="text-nav" href="/auth/signup">REGÍSTRATE</a>
+        {{/if}}      
+      </nav>  
+  </div>
+  <br><br>
   {{{body}}}
 
-  <script src="/javascripts/script.js"></script>
+  <div id="container-footer">
+    Footer
+  </div>
+</div>
+<br>
+
+
 </body>
 </html>

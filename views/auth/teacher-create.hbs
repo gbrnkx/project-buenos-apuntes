@@ -1,0 +1,10 @@
+<form action="/auth/teacher-create" method="POST">
+    <select id="schools" name="school">
+      {{#each schools}}
+      <option value="{{this._id}}">{{this.short_name}}</option>
+      {{/each}}
+    <label for="teacher">Docente</label>
+    <input type="text" name="teacher" id="">
+    <input type="submit">
+  </select>
+</form>
