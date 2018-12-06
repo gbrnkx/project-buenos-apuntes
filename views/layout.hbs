@@ -12,56 +12,68 @@
 </head>
 
 <body>
-<div id="container-global">
-  <div id="container-header">
-  <div>
-    <img onclick="" id="logo-top-left" src="https://res.cloudinary.com/gbrnkx/image/upload/v1543887957/buenos-apuntes/logos/buenos_apuntes_logo.png" alt="buenos_apuntes_logo">
-  </div>
+  <div id="container-global">
+    <div id="container-header">
+      <div>
+        <a href="/"><img id="logo-top-left" src="https://res.cloudinary.com/gbrnkx/image/upload/v1543887957/buenos-apuntes/logos/buenos_apuntes_logo.png"
+            alt="buenos_apuntes_logo"></a>
+      </div>
       <nav id="nav-header">
         {{#if user}}
-          <button class="upload-button" onclick="window.location.href='/auth/upload'"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904309/buenos-apuntes/logos/upload-icon.png" alt="upload-icon" height="27px" width="27px">SUBIR APUNTE</button>
-          <a class="text-nav" id="anchor-exit" href="/auth/logout"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904753/buenos-apuntes/logos/logout-icon.png" alt="logout-icon" height="27px" width="27px"></a>
-          <a class="text-nav" href="/auth/logout">MI CUENTA</a>
-          <img id="user-top-right" src="{{user.photo}}" alt="user_pic">
+        <button  class="upload-button" onclick="window.location.href='/auth/upload'"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904309/buenos-apuntes/logos/upload-icon.png"
+            alt="upload-icon" height="27px" width="27px">SUBIR APUNTE</button>
+        <a class="text-nav" id="anchor-exit" href="/auth/logout"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904753/buenos-apuntes/logos/logout-icon.png"
+            alt="logout-icon" height="27px" width="27px"></a>
+        <a class="text-nav" href="/auth/logout">MI CUENTA</a>
+        <img id="user-top-right" src="{{user.photo}}" alt="user_pic">
         {{else}}
-          <button class="upload-button" onclick="window.location.href='/auth/upload'"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904309/buenos-apuntes/logos/upload-icon.png" alt="upload-icon" height="27px" width="27px">SUBIR APUNTE</button>
-          <a class="text-nav" href="/auth/login">INICIA SESIÓN</a>
-          <a class="text-nav" href="/auth/signup">REGÍSTRATE</a>
-        {{/if}}      
-      </nav>  
-  </div>
-  <br><br>
-  {{{body}}}
+        <button class="upload-button" onclick="window.location.href='/auth/upload'"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904309/buenos-apuntes/logos/upload-icon.png"
+            alt="upload-icon" height="27px" width="27px">SUBIR APUNTE</button>
+        <a class="text-nav" href="/auth/login">INICIA SESIÓN</a>
+        <a class="text-nav" href="/auth/signup">REGÍSTRATE</a>
+        {{/if}}
+      </nav>
+    </div>
 
-  <div id="container-footer">
-    Footer
-  </div>
-</div>
+    {{{body}}}
 
-<br>
-  <nav>
-    <a href="/"><img id='logoA' class="logoA" src="/images/apuntologo.jpg" alt="logoA"></a>
+  </div>
+
+  {{!-- <nav>
+    <a href="/"><img id='logoA' class="logoA" src="https://res.cloudinary.com/gbrnkx/image/upload/v1543887957/buenos-apuntes/logos/buenos_apuntes_logo.png"
+        alt="logoA"></a>
 
     <div class="vista">
+      {{#if user}}
       <ul>
-        <li><a class="linkUp" href="/upDocuments">Plan Premium</a></li>
-        <li><a class="linkUp" href="/profile">Usuario</a></li>
+        <li><button class="upload-button" onclick="window.location.href='/auth/upload'"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904309/buenos-apuntes/logos/upload-icon.png"
+              alt="upload-icon" height="27px" width="27px">Subir Apunte</button></li>
+        <li><a class="text-nav" id="anchor-exit" href="/auth/logout"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904753/buenos-apuntes/logos/logout-icon.png"
+              alt="logout-icon" height="27px" width="27px"></a></li>
+        <li><a class="linkUp" href="/upDocuments">Mi Cuenta</a></li>
       </ul>
-      <img class="profilePic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAMFBMVEXFxcX////CwsLGxsb7+/vT09PJycn19fXq6urb29vOzs7w8PDe3t7n5+f5+fnt7e2uCwolAAAFHUlEQVR4nO2dC5qqMAyFMTwUFNz/bq+VYYrKKJCkOfXmXwHna5uTpA+KwnEcx3Ecx3Ecx3Ecx3Ecx3Ecx3Ecx3Ecx3EcA2iO9cdIc5PUdO2l78+BU39p66b4HplE3eU6VIcnqmNfl1+gksr6+iIucr50WYukor7+re6Hoe1y1UhNO3zUd+fUFRmKpOa0Tt6dY5ubRCouG/QFzk1WGmnt/JxzykcjdZ/jyxJDLlOV2l36AtcsJJb9boG3YcR3DuqODIE3LtYKPkDdmwRmpUToUaSaq++AvRgZMWbOubQW8hdCAm8ZDugoikzREdCJ2okJPBx6azFLNOwoOgcxojJ98JkaTSJxMpklKrCAKhZGI0drTY/wU5lXoJYibannV9NYy4oozNEAkPHTjop+DTDxVGkIgYJNoyQQJtiIW+EMjGAjm649AjGIaqswcEZQKJ2QPlJbqytki6ZXAAZRJ52J2McaUowzAfs+uFzrYhnzaapphiPWdaJWShqxjqa6kTTQ205TVbsfMa6htL0iYOsXpJrQjHSmCkv1QGPtiHqlYcQ21Gj7fcDU8xOEUuNgSltPzexh+HqFlanCBHZ4OLhCV+gK/3OF6vWvucLv98MUOY2pwu/PS/+D2qJU7pYGbOvDFDW+bbON9p3o3oRxn0bfLgZTgSn6pSfrtr56qLHemtHPTK2319SzGvtjQ9qeb39Wgc66Cm073nd0U1PzDdJCO3Gzn6TKpl9Zq7ujGWsQhlA3NwWIMwG9zM08Y/tBrR9VWeczv5CSQuuUNKIUTk23ZJ5RKfVhjnkXotfWIlgX2BSCDYbZR+QTcLhb3dKZDUY2M0d4KWItwhHRah/zsrOgKw4wycwjcgEVcgQDQo23CqSiWEJkFAfod2oE1uIZdA1OsCPqFXYNTjCfb8Ez+iX2x5sKLlVbhtqdDcar9ZevhnbZxoBUD35k23t0d304LYs1ELVbnfFaZ/REJJX9niP8Q19moZGo3m8XR/yBvOnjFftncI2c8ZuNo7WMP5HQh6yRGrlmFOJTnyTcT+zRlqPUBI2gTVWNUzUna1ERgecgF4GpNBQ38jGqxVLzQA1A31Rrhk6Yz9QEh/WND0GnuG9huhiTXJkxfAizTHLr6cbJKN6UCU6x/2DTRE1xEeEXi3O0ZUqBN4nJRzHhFB1JPlFTBZlI2kQ8zc3KJ1Le8DIRmFJiknuVS6RK4Ej/JtBfJErDSzOBiY4wJHX6Z1I4v1GUmdCPNirnLLeg3oJLcbX5PcpHNbRvOa1A956QmRPOUXVF+zkaUJynpkYR0bOMJH2nNej1pqyV/aKkz9jr5yj5vrXXz1F5SQLACiMapmierj2ikLyleKdlA/I/2oFxiglxx9B+mHwz0lf34IZQfhDRhlD6bhvgEAoPYooHkTczSIZTLC+cEExsoNKZiGBiY9cCfo/Y/SjIOBMQizWWTe73CMUasJx7jlD+DdKdWUKoY4PRYFtGpO0G1Lx4RaadgTtJhf4fiGqGIwKWCGuGIwKWqP+7IxYCzygjR9IAO5pC7Da9g70TBVpWRNgFBlgT8RV2WxHbKwJMv4BOaEaYaU2K16yZMN/qgV+G7IWIvwyZCxHeDQMsR8wg0DBDDXB5H2EV+hkEGmaoySHQsEJNFoGGFWrAq98JRhUMX1iMMMqLLEIpK5jCbd4vw9nSt/72lewXiN6jmdjfq8Hdknlk92ZwJnbIMMRM7JBhiFlUFoHd1UWaP1QKsPsHA5mkNB+Smn9r+138jGzYzgAAAABJRU5ErkJggg=="
-        alt="batman">
+      <img class="profilePic" src="{{user.photo}}" alt="batman">
+      { {{else}}
+      <li><a class="linkUp" href="/auth/login">Inicia Sesión</a></li>
+      <li><a class="linkUp" href="/auth/signup">Registrate</a></li>
+      {{/if}}
     </div>
 
     <img id="hamburguesita" class="hambur" src="/images/ham-menu.png" alt="">
 
     <ul id="listaa" class="listita">
-      <li class="linkDown"><a href="/premium">Plan Premium</a></li>
-      <li class="linkDown"><a href="/profile">Usuario</a></li>
+      <li class="linkDown"><a href="/premium">Inicia Sesión</a></li>
+      <li class="linkDown"><a href="/profile">Registrate</a></li>
     </ul>
 
-
   </nav>
+  --}}
 
+  <div id="container-footer">
+    Footer
+  </div>
 
+  <script src="/javascripts/script.js"></script>
 </body>
 
 </html>

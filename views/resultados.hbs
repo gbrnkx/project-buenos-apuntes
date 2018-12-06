@@ -1,3 +1,8 @@
+<style>body{
+background-color: white;
+}
+</style>
+
 <section class="search2">
   <div>
     <div class="searchText">
@@ -13,30 +18,18 @@
   <div class="university">
     <img src="/images/whiteUni.png"
       alt="">
-    <select class="select" name="universidad" id="universidad">
-      <option value="">Universidad</option>
-      <option value="2">UAM</option>
-      <option value="3">UNAM </option>
-      <option value="4">ITAM</option>
-      <option value="5">TJDJHCB</option>
-      <option value="6">UAP</option>
-      <option value="7">IPN</option>
-      <option value="8">IPN</option>
+    <select class="select" name="school" id="universidad">
+      <option value="">Selecciona una escuela</option>
+
     </select>
   </div>
 
   <div class="university">
     <img src="/images/whiteBooks.png"
       alt="">
-    <select class="select" name="materia" id="materia">
-      <option value="">Materia</option>
-      <option value="2">UAM</option>
-      <option value="3">UNAM </option>
-      <option value="4">ITAM</option>
-      <option value="5">TJDJHCB</option>
-      <option value="6">UAP</option>
-      <option value="7">IPN</option>
-      <option value="8">IPN</option>
+    <select class="select" name="school" id="materia">
+      <option value="">Selecciona una materia</option>
+
     </select>
   </div>
 
@@ -44,20 +37,18 @@
     <img src="/images/whiteTeacher.png"
       alt="">
     <select class="select" name="profesor" id="profesor">
-      <option value="">Profesores</option>
-      <option value="2">UAM</option>
-      <option value="3">UNAM </option>
-      <option value="4">ITAM</option>
-      <option value="5">TJDJHCB</option>
-      <option value="6">UAP</option>
-      <option value="7">IPN</option>
-      <option value="8">IPN</option>
+      <option value="">Selecciona un docente</option>
+
     </select>
   </div>
 </section>
 
 <section class="renderPreview" >
   <div>
-{{> previewCard}}
+      {{#each apuntes}}
+        {{> previewCard this}}
+      {{/each}}
+      <br>
   </div>
+  
 </section>

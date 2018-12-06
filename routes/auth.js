@@ -13,6 +13,17 @@ const uploadCloud = require('../config/cloudinary.js');
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
+router.get('/test-results', (req,res,next)=>{
+  Apunte.find()
+  .then(apuntes=>{
+    res.render('resultados', { apuntes })
+    //res.send(apuntes)
+  })
+  .catch(e=>{
+    res.send(e)
+  })
+})
+
 router.post('/upload', uploadCloud.single('apunte'), (req, res, next)=>{
   if(req.isAuthenticated() && req.user.role != ''){
     Apunte.create({
