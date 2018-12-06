@@ -17,7 +17,8 @@ router.post('/results',(req,res,next)=>{
   const toSearch = req.body.inputSearch
   
   //Necesario crear el indice texto de los campos a buscar
-  //Revisar si a los nuevos documentos habrá que hacer algo
+  //db.apuntes.createIndex({title:"text", school:"text", subject:"text", period:"text", teacher:"text"})
+
   Apunte.find({"$text":{"$search": toSearch}}, {'_id':0,'title':1, 'school':1,'subject':1, 'teacher':1, 'fileURL':1})
   .then(apuntes=>{
     res.render('resultados', { apuntes })
