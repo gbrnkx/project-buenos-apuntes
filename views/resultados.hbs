@@ -1,7 +1,3 @@
-<style>body{
-background-color: white;
-}
-</style>
 
 <section class="search2">
   <div>
@@ -9,7 +5,9 @@ background-color: white;
       <p>Encuentra los apuntes que buscas</p>
     </div>
     <div class="searchInput">
-      <input placeholder="Busca apuntes, materias y universidades" type="text">
+              <form action="/auth/results" method="POST">
+            <input type="text" name="inputSearch" id="busquedaLanding" placeholder="Busca apuntes, materias y universidades">
+        </form>
     </div>
   </div>
 </section>
@@ -18,17 +16,16 @@ background-color: white;
   <div class="university">
     <img src="/images/whiteUni.png"
       alt="">
-    <select class="select" name="school" id="universidad">
-      <option value="">Selecciona una escuela</option>
-
+    <select class="select" name="school" id="school-selector" onchange="removeApuntes()">
+    <option value="">Escuela</option>
     </select>
   </div>
 
   <div class="university">
     <img src="/images/whiteBooks.png"
       alt="">
-    <select class="select" name="school" id="materia">
-      <option value="">Selecciona una materia</option>
+    <select class="select" name="school" id="subject-selector">
+      <option value="">Materia</option>
 
     </select>
   </div>
@@ -36,19 +33,120 @@ background-color: white;
   <div class="university">
     <img src="/images/whiteTeacher.png"
       alt="">
-    <select class="select" name="profesor" id="profesor">
-      <option value="">Selecciona un docente</option>
+    <select class="select" name="profesor" id="teacher-selector">
+      <option value="">Profesor</option>
 
     </select>
   </div>
 </section>
 
-<section class="renderPreview" >
-  <div>
+<section class="renderPreview" id="apuntes-section">
+  <div id="apuntes-div">
       {{#each apuntes}}
         {{> previewCard this}}
       {{/each}}
-      <br>
   </div>
   
 </section>
+
+<script>
+  var resultadosApuntes = []
+  resultadosApuntes.push({{{apuntes}}})
+  //console.log(resultadosApuntes)
+
+    function fillSchoolSelect(){
+    var school_selector = document.getElementById('school-selector')
+    school_selector.innerHTML = ''
+    var auxSchools = []
+
+    var option_node = document.createElement('option');
+    var text_option_node = document.createTextNode('Escuela');
+    option_node.appendChild(text_option_node)
+    school_selector.appendChild(option_node)
+
+    for(var i=0;i<resultadosApuntes.length;i++){
+      var school = resultadosApuntes[i].school
+      if(auxSchools.indexOf(school)===-1){
+        auxSchools.push(school)
+
+        var option_node = document.createElement('option');
+        option_node.value = school
+        var text_option_node = document.createTextNode(school);
+        
+        option_node.appendChild(text_option_node)
+        school_selector.appendChild(option_node)
+      }
+
+    }
+  }
+
+    function fillTeacherSelect(){
+    var teacher_selector = document.getElementById('teacher-selector')
+    //console.log(teacher_selector)
+    teacher_selector.innerHTML = ''
+    var auxTeacher = []
+
+    var option_node = document.createElement('option');
+    var text_option_node = document.createTextNode('Profesor');
+    option_node.appendChild(text_option_node)
+    teacher_selector.appendChild(option_node)
+
+    for(var i=0;i<resultadosApuntes.length;i++){
+      var teacher = resultadosApuntes[i].teacher
+      if(auxTeacher.indexOf(teacher)===-1){
+        auxTeacher.push(teacher)
+
+        var option_node = document.createElement('option');
+        option_node.value = teacher
+        var text_option_node = document.createTextNode(teacher);
+        
+        option_node.appendChild(text_option_node)
+        teacher_selector.appendChild(option_node)
+      }
+
+    }
+  }
+
+
+
+    function fillSubjectSelect(){
+    var subject_selector = document.getElementById('subject-selector')
+    //console.log(teacher_selector)
+    subject_selector.innerHTML = ''
+    var auxSubject = []
+
+    var option_node = document.createElement('option');
+    var text_option_node = document.createTextNode('Materia');
+    option_node.appendChild(text_option_node)
+    subject_selector.appendChild(option_node)
+
+    for(var i=0;i<resultadosApuntes.length;i++){
+      var subject = resultadosApuntes[i].subject
+      if(auxSubject.indexOf(subject)===-1){
+        auxSubject.push(subject)
+
+        var option_node = document.createElement('option');
+        option_node.value = subject
+        var text_option_node = document.createTextNode(subject);
+        
+        option_node.appendChild(text_option_node)
+        subject_selector.appendChild(option_node)
+      }
+
+    }
+  }
+
+  function removeApuntes(){
+    /*
+    console.log('removeApuntes()')
+    var apuntes = document.getElementById('apuntes-div')
+    apuntes.removeChild(apuntes.childNodes[0])
+    console.log(apuntes.children)
+    */
+  }
+
+  fillSchoolSelect()
+  fillTeacherSelect()
+  fillSubjectSelect()
+
+</script>

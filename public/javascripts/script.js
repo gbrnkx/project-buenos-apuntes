@@ -54,8 +54,9 @@ document.addEventListener('keyup', function(e) {
         doBsuqueda()
     }
 })
-
-
+/*
 document.getElementById('upLoad').addEventListener('click', function() {
     document.getElementById('toUploadCloud').click()
+
 })
+*/

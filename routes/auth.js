@@ -13,6 +13,21 @@ const uploadCloud = require('../config/cloudinary.js');
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
+router.post('/results',(req,res,next)=>{
+  const toSearch = req.body.inputSearch
+  
+  //Necesario crear el indice texto de los campos a buscar
+  //Revisar si a los nuevos documentos habrá que hacer algo
+  Apunte.find({"$text":{"$search": toSearch}}, {'_id':0,'title':1, 'school':1,'subject':1, 'teacher':1, 'fileURL':1})
+  .then(apuntes=>{
+    res.render('resultados', { apuntes })
+    //res.send(apuntes)
+  })
+  .catch(e=>{
+    res.send(e)
+  })
+})
+
 router.get('/test-results', (req,res,next)=>{
   Apunte.find()
   .then(apuntes=>{
@@ -23,6 +38,8 @@ router.get('/test-results', (req,res,next)=>{
     res.send(e)
   })
 })
+
+
 
 router.post('/upload', uploadCloud.single('apunte'), (req, res, next)=>{
   if(req.isAuthenticated() && req.user.role != ''){
@@ -210,8 +227,6 @@ router.get("/logout", (req, res) => {
   req.app.locals.user = null
   res.redirect('/');
 });
-
-
 /* ESTO NO SIRVE!!!!!! MAÑANA TEMPRANO LO ARREGLO */
 /* router.post('/profile', (req,res,next)=>{
   //res.send(req.isAuthenticated())
@@ -228,5 +243,4 @@ router.get("/logout", (req, res) => {
     res.redirect('/auth/login')
   }
 }) */
-
 module.exports = router;

@@ -10,12 +10,12 @@ router.get('/', (req, res, next) => {
   res.render('landing-page');
 });
 
-
+/*
 router.get('/resultados', (req, res, next) => {
   res.render('resultados');
 });
 
-/* router.get('/profile', (req, res, next) => {
+ router.get('/profile', (req, res, next) => {
   res.render('profile');
 });
  */
