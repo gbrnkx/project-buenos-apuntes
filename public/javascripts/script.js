@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }, false);
 
-document.getElementById('hamburguesita').addEventListener('mouseover', function() {
+/* document.getElementById('hamburguesita').addEventListener('mouseover', function() {
     document.getElementById('listaa').style.display = 'block'
     document.getElementById('listaa').addEventListener('mouseover', function() {
         document.getElementById('listaa').style.display = 'block'
@@ -30,7 +30,7 @@ document.getElementById('hamburguesita').addEventListener('dblclick', function()
     document.getElementById('listaa').addEventListener('mouseout', function() {
         document.getElementById('listaa').style.display = 'none'
     })
-})
+}) */
 
 function Busqueda(x) {
     document.addEventListener('keyup', function(e) {
@@ -53,4 +53,9 @@ document.addEventListener('keyup', function(e) {
     if (e.keyCode === 13) {
         doBsuqueda()
     }
+})
+
+
+document.getElementById('upLoad').addEventListener('click', function() {
+    document.getElementById('toUploadCloud').click()
 })

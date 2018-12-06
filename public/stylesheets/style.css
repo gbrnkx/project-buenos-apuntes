@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  width: 100%;
+  background-color: rgba(52, 69, 120, 0.9);
+  min-width: 400px; }
+
 #container-global {
   display: flex;
   flex-direction: column;
@@ -8,23 +18,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
-  width: 100vw;
+  height: 10vh;
+  width: 100%;
   margin-top: -10px;
   margin-left: -10px;
-  background-color: #2d5181; }
+  background-color: #2d5181;
+  font-family: 'Raleway'; }
 
 #logo-top-left {
-  height: 50px;
-  width: 105px;
-  margin-top: 5px;
-  margin-left: 50px; }
+  height: 8vh;
+  width: 19vw;
+  margin-top: 7px;
+  margin-left: 70px;
+  max-width: 200px;
+  min-width: 150px; }
 
 #nav-header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 30vw; }
+  width: 70vw;
+  max-width: 50%;
+  font-family: 'Raleway'; }
 
 .text-nav {
   color: white;
@@ -42,13 +57,19 @@
 
 .upload-button {
   border-radius: 3%;
-  display: flex;
+  display: inline;
   align-items: center;
   justify-content: space-between;
   background-color: #4ccdb4;
   border: 1px solid white;
   color: white;
-  border-radius: 10px; }
+  border-radius: 10px;
+  padding: 10px 5px 13px 5px; }
+
+.upload-button img {
+  width: 30px;
+  margin-bottom: -8px;
+  margin-right: 2vw; }
 
 #anchor-exit {
   display: flex;
@@ -158,18 +179,6 @@ p {
 
 #fileElem {
   display: none; }
-* {
-  margin: 0;
-  padding: 0; }
-
-a {
-  color: #00B7FF; }
-
-body {
-  font-family: 'Raleway', sans-serif;
-  width: 100%;
-  background-color: rgba(52, 69, 120, 0.9);
-  min-width: 400px; }
 
 .hambur {
   display: none; }
@@ -193,6 +202,9 @@ body {
 
 #listaa {
   display: none; }
+
+.vista {
+  width: 70%; }
 
 @media only screen and (max-width: 790px) {
   .vista {
@@ -230,15 +242,16 @@ h2 {
   font-size: 5vh;
   padding: 4vw; }
 
-nav {
-  width: 100%;
-  height: 10vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: white;
-  font-size: 2.5vh; }
-
+/* nav {
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(52, 69, 120);
+    font-size: 2.5vh;
+}
+ */
 .profilePic {
   float: right;
   border-radius: 50%;
@@ -247,14 +260,15 @@ nav {
   vertical-align: middle;
   margin-top: -5vh; }
 
-nav > div {
-  float: right;
-  margin: 3vh 1vw;
-  padding-right: 5vw; }
+/* nav>div {
+    float: right;
+    margin: 3vh 1vw;
+    padding-right: 5vw;
+}
 
 nav div ul {
-  padding-right: 10vw; }
-
+    padding-right: 10vw;
+} */
 ul > li {
   display: inline;
   list-style: none;
@@ -262,8 +276,7 @@ ul > li {
   font-size: 1em; }
 
 header {
-  background-position-y: 10vh;
-  padding-top: 18vh;
+  padding-top: 15vh;
   background-image: url("https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2017/10/onenote%20note%20taking.jpg?itok=bFauGScR");
   background-size: cover;
   background-repeat: no-repeat;
@@ -292,7 +305,8 @@ header div {
   float: left;
   width: 25vh;
   padding: 1.5vh 6vw;
-  vertical-align: middle; }
+  vertical-align: middle;
+  height: 8vh; }
 
 .linkUp {
   text-decoration: none;
@@ -353,7 +367,6 @@ header div {
 
 .search2 {
   /* background-color: whitesmoke; */
-  padding-top: 10vh;
   width: 100%;
   height: 25vh; }
 
@@ -365,7 +378,7 @@ header div {
   align-items: center; }
 
 .searchText {
-  color: whitesmoke;
+  color: black;
   font-size: 2vw;
   font-size: 4vmin;
   width: 27%; }
@@ -376,7 +389,7 @@ header div {
 .searchInput input {
   height: 6vh;
   width: 60vw;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 13px;
   border: 0;
   font-size: 3.2vmin;
@@ -473,5 +486,59 @@ p {
 .backImage {
   margin-top: 10vh;
   background-color: yellow; }
+
+.logged {
+  background-color: #344578;
+  color: goldenrod;
+  width: 80%;
+  height: auto;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 4vh 0;
+  max-width: 700px; }
+
+.logged h2 {
+  font-size: 5em;
+  margin-bottom: 2vh; }
+
+.logged label {
+  font-size: 2em; }
+
+.logged div {
+  display: flex; }
+
+.logged a {
+  color: white; }
+
+#form-container button {
+  width: 50%;
+  padding: 1.6vh;
+  margin: 4vh 20%;
+  border: 0;
+  background-color: #00d7b3;
+  color: whitesmoke;
+  font-weight: 600;
+  font-size: 3vh;
+  text-align: center;
+  border-radius: 13px; }
+
+#form-container input {
+  width: 100%;
+  margin: 30px 1px;
+  height: 4vh;
+  font-size: 1.5em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 13px;
+  border: 0;
+  outline-color: rgba(0, 0, 0, 0);
+  padding-left: 10px; }
+
+#form-container p {
+  font-size: 1.3em; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,208 +1,8 @@
-#container-global{
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-align-items: center;
-//background-image: url('https://res.cloudinary.com/gbrnkx/image/upload/v1543946754/buenos-apuntes/logos/fondo_index.png');
-}
-
-#container-header{
-  //position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  //size: 100%;
-  height: 60px;
-  width: 100vw;
-  margin-top: -10px;
-  margin-left: -10px;
-  //margin-right: 1000px;
-  background-color:rgb(45, 81, 129);
-}
-#logo-top-left{
-  height: 50px;
-  width: 105px;
-  margin-top: 5px;
-  margin-left: 50px;
-}
-
-#nav-header{
-display: flex;
-align-items: center;
-justify-content: space-evenly;
-width: 30vw;
-//margin-right: 400px;
-}
-
-.text-nav{
-  color: white;
-  font-family: Calibri;
-  text-decoration: none;
-}
-
-#circle-profile-pic{
-  border-radius: 50%;
-  
-}
-#user-top-right{
-  border-radius: 50%;
-  border: 3px solid white;
-  height: 35px;
-  width: 35px;
-  //margin-top: 5px;
-  //margin-left: 50px;
-  //margin-right: -400px;
-}
-
-.upload-button{
-  border-radius: 3%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgb(76,205,180);
-  border: 1px solid white;
-  color:white;
-  border-radius: 10px;
-}
-
-#anchor-exit{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  //font-size: 12px
-}
-
-#search-container{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#search-box{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 65px;
-  width: 480px;
-  background-color:rgb(237, 191, 87);
-  border-radius: 20px;
-}
-
-#input-search-box{
-  height: 50px;
-  width: 400px;
-  background-color: white;
-  font-size: 17px;
-  text-align: left;
-  text-indent: 5px;
-  border: 0px;
-  border-radius: 15px;
-  outline:none;
-  
-}
-
-#search-button{
-  height: 55px;
-  width: 55px;
-  background-color:rgb(237, 191, 87);
-  border: 0px;
-}
-
-//Upload view
-#container-upload-data-input{
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  flex-direction: column ;
-  justify-content: space-evenly;
-  height: 450px;
-  width: 600px;
-  background-color: rgb(231, 234, 237);
-}
-
-#container-data-input{
-  display: flex;
-  align-items:stretch;
-  flex-direction: column ;
-  justify-content: space-between;
-}
-
-#div-school-subject-period{
-  display: flex;
-  float: row;
-  justify-content: space-between;
-}
-
-#input-title{
-height: 25px;
-width: 400px;
-}
-
-#upload-apunte-button{
-  border-radius: 3%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgb(237,191,87);
-  border: 1px solid white;
-  color:white;
-  border-radius: 10px;
-}
-
-//End upload view
-
-
-//Drag and drop
-#drop-area {
-  border: 2px dashed #ccc;
-  border-radius: 20px;
-  //width: 400px;
-  font-family: calibri;
-  //margin: 100px auto;
-  padding: 20px;
-}
-#drop-area.highlight {
-  border-color: purple;
-}
-p {
-  margin-top: 0;
-}
-.my-form {
-  margin-bottom: 10px;
-}
-#gallery {
-  margin-top: 10px;
-}
-#gallery img {
-  width: 150px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-.button {
-  display: inline-block;
-  padding: 10px;
-  background: #ccc;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-.button:hover {
-  background: #ddd;
-}
-#fileElem {
-  display: none;
-}
-
-//End drag and drop
 * {
     margin: 0;
     padding: 0;
 }
 
-a {
-    color: #00B7FF;
-}
 
 body {
     font-family: 'Raleway', sans-serif;
@@ -210,6 +10,232 @@ body {
     background-color: rgba(52, 69, 120, 0.9);
     min-width: 400px;
 }
+
+
+#container-global {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    //background-image: url('https://res.cloudinary.com/gbrnkx/image/upload/v1543946754/buenos-apuntes/logos/fondo_index.png');
+}
+
+#container-header {
+    //position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //size: 100%;
+    height: 10vh;
+    width: 100%;
+    margin-top: -10px;
+    margin-left: -10px;
+    //margin-right: 1000px;
+    background-color: rgb(45, 81, 129);
+    font-family: 'Raleway';
+}
+
+#logo-top-left {
+    height: 8vh;
+    width: 19vw;
+    margin-top: 7px;
+    margin-left: 70px;
+    max-width: 200px;
+    min-width: 150px;
+}
+
+#nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 70vw;
+    max-width: 50%;
+    //margin-right: 400px;
+    font-family: 'Raleway';
+}
+
+.text-nav {
+    color: white;
+    font-family: Calibri;
+    text-decoration: none;
+}
+
+#circle-profile-pic {
+    border-radius: 50%;
+
+}
+
+#user-top-right {
+    border-radius: 50%;
+    border: 3px solid white;
+    height: 35px;
+    width: 35px;
+    //margin-top: 5px;
+    //margin-left: 50px;
+    //margin-right: -400px;
+}
+
+.upload-button {
+    border-radius: 3%;
+    display: inline;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(76, 205, 180);
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 5px 13px 5px;
+}
+
+.upload-button img{
+    width: 30px;
+    margin-bottom: -8px;
+    margin-right: 2vw;
+}
+
+#anchor-exit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //font-size: 12px
+}
+
+#search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 65px;
+    width: 480px;
+    background-color: rgb(237, 191, 87);
+    border-radius: 20px;
+}
+
+#input-search-box {
+    height: 50px;
+    width: 400px;
+    background-color: white;
+    font-size: 17px;
+    text-align: left;
+    text-indent: 5px;
+    border: 0px;
+    border-radius: 15px;
+    outline: none;
+
+}
+
+#search-button {
+    height: 55px;
+    width: 55px;
+    background-color: rgb(237, 191, 87);
+    border: 0px;
+}
+
+//Upload view
+#container-upload-data-input {
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 450px;
+    width: 600px;
+    background-color: rgb(231, 234, 237);
+}
+
+#container-data-input {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#div-school-subject-period {
+    display: flex;
+    float: row;
+    justify-content: space-between;
+}
+
+#input-title {
+    height: 25px;
+    width: 400px;
+}
+
+#upload-apunte-button {
+    border-radius: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(237, 191, 87);
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+}
+
+//End upload view
+
+
+//Drag and drop
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    //width: 400px;
+    font-family: calibri;
+    //margin: 100px auto;
+    padding: 20px;
+}
+
+#drop-area.highlight {
+    border-color: purple;
+}
+
+p {
+    margin-top: 0;
+}
+
+.my-form {
+    margin-bottom: 10px;
+}
+
+#gallery {
+    margin-top: 10px;
+}
+
+#gallery img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.button:hover {
+    background: #ddd;
+}
+
+#fileElem {
+    display: none;
+}
+
+//End drag and drop
+
+
+
+//OMAR ESTILOS//
+
 
 
 .hambur {
@@ -237,6 +263,10 @@ body {
 
 #listaa {
     display: none;
+}
+
+.vista {
+    width: 70%;
 }
 
 @media only screen and (max-width: 790px) {
@@ -296,15 +326,16 @@ h2 {
     padding: 4vw;
 }
 
-nav {
+/* nav {
     width: 100%;
     height: 10vh;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: white;
+    background-color: rgb(52, 69, 120);
     font-size: 2.5vh;
 }
+ */
 
 .profilePic {
     float: right;
@@ -315,7 +346,7 @@ nav {
     margin-top: -5vh;
 }
 
-nav>div {
+/* nav>div {
     float: right;
     margin: 3vh 1vw;
     padding-right: 5vw;
@@ -323,7 +354,7 @@ nav>div {
 
 nav div ul {
     padding-right: 10vw;
-}
+} */
 
 
 ul>li {
@@ -336,8 +367,7 @@ ul>li {
 
 
 header {
-    background-position-y: 10vh;
-    padding-top: 18vh;
+    padding-top: 15vh;
     background-image: url("https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2017/10/onenote%20note%20taking.jpg?itok=bFauGScR");
     background-size: cover;
     background-repeat: no-repeat;
@@ -372,7 +402,7 @@ header div {
     width: 25vh;
     padding: 1.5vh 6vw;
     vertical-align: middle;
-
+    height: 8vh;
 }
 
 .linkUp {
@@ -451,7 +481,7 @@ header div {
 
 .search2 {
     /* background-color: whitesmoke; */
-    padding-top: 10vh;
+    
     width: 100%;
     height: 25vh;
 }
@@ -465,7 +495,7 @@ header div {
 }
 
 .searchText {
-    color: whitesmoke;
+    color: black;
     font-size: 2vw;
     font-size: 4vmin;
     width: 27%;
@@ -478,7 +508,7 @@ header div {
 .searchInput input {
     height: 6vh;
     width: 60vw;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 13px;
     border: 0;
     font-size: 3.2vmin;
@@ -542,7 +572,7 @@ header div {
 }
 
 .cardPreview {
-    background-color: rgb(53,44,90);
+    background-color: rgb(53, 44, 90);
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -591,7 +621,72 @@ p {
 
 //PROFILE VIEW//
 
-.backImage{
+.backImage {
     margin-top: 10vh;
     background-color: yellow;
+}
+
+
+//LOGIN//
+
+.logged {
+    background-color: rgb(52,69,120);
+    color: goldenrod;
+    width: 80%;
+    height: auto;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 4vh 0;
+    max-width: 700px;
+}
+
+.logged h2 {
+    font-size: 5em;
+    margin-bottom: 2vh;
+}
+
+.logged label {
+    font-size: 2em;
+}
+
+.logged div {
+    display: flex;
+}
+
+.logged a {
+    color:white;
+}
+
+#form-container button {
+    width: 50%;
+    padding: 1.6vh;
+    margin: 4vh 20%;
+    border: 0;
+    background-color: rgb(0, 215, 179);
+    color: whitesmoke;
+    font-weight: 600;
+    font-size: 3vh;
+    text-align: center;
+    border-radius: 13px;
+}
+
+#form-container input{
+    width:100%;
+    margin: 30px 1px;
+    height: 4vh;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 13px;
+    border: 0;
+    outline-color: rgba(0, 0, 0, 0);
+    padding-left: 10px;
+}
+
+#form-container p {
+    font-size: 1.3em;
 }
