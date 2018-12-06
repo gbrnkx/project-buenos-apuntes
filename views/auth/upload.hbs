@@ -1,38 +1,49 @@
 <div id="container-upload-data-input">
   <h2>Completa el formulario y carga tu apunte</h2>
   <div id="container-data-input">
-    <div id="div-title">
-    <label for="title">Título*</label><br>
-    <input type="text" name="title" id="input-title" placeholder="pe. Fundamentos de Probabilidad">
-    </div>
-    <br>
 
-    <div id="div-school-subject-period">
-      <div id="div-school">
-        <label for="school">Escuela*</label><br>
-        <input type="text" name="school" id="input-school">
+    <form action="/auth/upload" method="POST" enctype="multipart/form-data">
+      <div id="div-title">
+        <label for="title">Título*</label><br>
+        <input type="text" name="title" id="input-title" placeholder="pe. Fundamentos de Probabilidad">
+      </div><br>
+      <div id="div-school-subject-period">
+        <div id="div-school">
+          <label for="school">Escuela*</label><br>
+          <input type="text" name="school" id="input-school">
+        </div>
+        <div id="div-subject">
+          <label for="subject">Materia</label><br>
+          <input type="text" name="subject" id="input-subject">
+        </div>
+        <div id="div-period">
+          <label for="period">Periodo</label><br>
+          <input type="text" name="period" id="input-period">
+        </div>
+        <div id="div-teacher">
+          <label for="teacher">Profesor</label><br>
+          <input type="text" name="teacher" id="input-teacher">
+        </div>
       </div>
-      <div id="div-subject">
-        <label for="subject">Materia</label><br>
-        <input type="text" name="subject" id="input-subject">
+        <input type="file" name="apunte" id="input-apunte" accept="*" onchange="showFiles()">
+      <div id="drop-area">
+        <p>Arrastra y suelta aquí tu apunte o busca la ruta si prefieres</p>
+        <input type="file"  name="testApunte" id="fileElem" accept="*"> 
+        <label class="button" for="fileElem">Examinar</label>
       </div>
-      <div id="div-period">
-        <label for="period">Periodo</label><br>
-        <input type="text" name="period" id="input-period">
-      </div>
+      <input type="submit" name="" id="" value="SUBIR APUNTE">
+    </form>
+
+
+  
     </div>
   </div>
   <br>
-  <div id="drop-area">
-    <form class="my-form">
-      <p>Arrastra y suelta aquí tu apunte o busca la ruta si prefieres</p>
-      <input type="file" id="fileElem" multiple accept="*" onchange="handleFiles(this.files)">
-      <label class="button" for="fileElem">Examinar</label>
-    </form>
-  </div>
+<!--
   <div id="button-upload-apunte">
     <button id="upload-apunte-button"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904309/buenos-apuntes/logos/upload-icon.png" alt="upload-icon" height="27px" width="27px">SUBIR APUNTE</button>
   </div>
-</div>
+-->
+
 <br><br>
 <script src="../javascripts/drag-and-drop.js"></script>

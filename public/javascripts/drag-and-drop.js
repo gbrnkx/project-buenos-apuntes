@@ -1,3 +1,7 @@
+function showFiles(){
+  console.log('HOLI')
+}
+
 let dropArea = document.getElementById('drop-area')
 
 
@@ -29,14 +33,18 @@ function unhighlight(e) {
 dropArea.addEventListener('drop', handleDrop, false)
 
 function handleDrop(e) {
+  
   let dt = e.dataTransfer
+  console.log(dt)
   let files = dt.files
-  console.log(files[0])
-  ///handleFiles(files)
+  document.getElementById('input-apunte').click
+  //console.log(files[0])
+  //handleFiles(files)
 }
 
 function handleFiles(files) {
-  ([...files]).forEach(uploadFile)
+  console.log(files)
+  //([...files]).forEach(uploadFile)
 }
 
 function uploadFile(file) {

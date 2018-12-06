@@ -5,32 +5,82 @@ const User = require("../models/User");
 const School = require('../models/School')
 const Teacher = require('../models/Teacher')
 const Subject = require('../models/Subject')
+const Apunte = require('../models/Apunte')
+
+const uploadCloud = require('../config/cloudinary.js');
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
-router.post('/subject-create',(req,res,next)=>{
-  //res.send(req.body)
-  Subject.create({
-    name:req.body.name,
-    idSchool:req.body.school,
-    idTeacher:req.body.teacher,
-    period:req.body.period
-  })
-  .then(subject=>{
-    //res.render('auth/subject-create', {teachers} )
-    res.send(subject)
-  })
-  .catch(e=>{
-    res.send(e)
-  })
+router.post('/upload', uploadCloud.single('apunte'), (req, res, next)=>{
+  if(req.isAuthenticated() && req.user.role != ''){
+    Apunte.create({
+      title:req.body.title,
+      fileURL:req.file.url,
+      idOwner:req.user._id,
+      school:req.body.school,
+      subject:req.body.subject,
+      period:req.body.period,
+      teacher:req.body.teacher
+    })
+    .then(apunte=>{
+      res.send(apunte)
+    })
+    .catch(e=>{
+      res.send(e)
+    })
+  }
+//res.send(req.user)
+
+
+//res.send(req.file)
 
 })
 
-router.get('/test-select-teachers', (req,res,next)=>{
+router.get('/upload', (req,res,next)=>{
+  //res.send(req.isAuthenticated())
+  //res.send(req.user)
+  console.log(req.isAuthenticated())
 
-  Teacher.find({}, {_id: 0, 'created_at': 0, 'updated_at': 0, '__v':0}).populate('idSchool', {_id: 0, 'created_at': 0, 'updated_at': 0, '__v':0, 'logoSchool':0})
+  if(req.isAuthenticated() && req.user.role != ''){
+
+    res.render('auth/upload', req.user)
+
+    //res.send('Hay alguien loggeado')
+  } else{
+    //No hay ningún usuario loggeado
+    res.redirect('/auth/login')
+  }
+})
+
+router.post('/subject-create',(req,res,next)=>{
+
+  School.findOne({'short_name':{$eq:req.body.school}})
+  .then(school=>{
+    Subject.create({
+      name:req.body.name,
+      idSchool:school._id,
+      idTeacher:req.body.teacher,
+      period:req.body.period
+    })
+    .then(subject=>{
+      //res.render('auth/subject-create', {teachers} )
+      res.send(subject)
+    })
+    .catch(e=>{
+      res.send(e)
+    })
+  })
+  //res.send(req.body)
+  /*
+
+*/
+})
+
+router.get('/test-select-teachers', (req,res,next)=>{
+  Teacher.find({}, {_id: 0, 'created_at': 0, 'updated_at': 0, '__v':0}).populate('idSchool', { '_id': 0, 'created_at': 0, 'updated_at': 0, '__v':0, 'logoSchool':0})
+  //Teacher.find({}, {_id: 0, 'created_at': 0, 'updated_at': 0, '__v':0}).populate('idSchool', { '_id': 1, 'short_name':1})
   .then(teachers=>{
     //console.log(teachers);
     //app.locals.testTeachers = teachers
@@ -90,21 +140,7 @@ router.post('/school-create', (req, res, next) => {
 
 
 
-router.get('/upload', (req,res,next)=>{
-  //res.send(req.isAuthenticated())
-  //res.send(req.user)
-  console.log(req.isAuthenticated())
 
-  if(req.isAuthenticated() && req.user.role != ''){
-
-    res.render('auth/upload', req.user)
-
-    //res.send('Hay alguien loggeado')
-  } else{
-    //No hay ningún usuario loggeado
-    res.redirect('/auth/login')
-  }
-})
 
 router.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });

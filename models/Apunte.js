@@ -14,22 +14,13 @@ const apunteSchema = new Schema(
     default:0
   },
   isPremium:{
-    type:boolean,
+    type:Boolean,
     default:false
   }, 
-  idSchool:{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:'School'
-  },
-  idSubject:{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:'Subject'
-  },
+  school:String,
+  subject:String,
   period:String,
-  teacher:{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:'Teacher'
-  },
+  teacher:String,
   price:{
     type:Number,
     default:50

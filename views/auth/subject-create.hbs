@@ -1,15 +1,12 @@
 <form action="/auth/subject-create" method="POST">
-    <select id="school" name="school">
-      <option value="none">Selecciona una escuela</option>
-      {{#each teachers}}
-      <option value="{{this.idSchool._id}}">{{this.idSchool.short_name}}</option>
-      {{/each}}
+    <select onchange="fillTeacherSelect()" id="school-selector" name="school">
+
     </select>
-    <select name="teacher" id="teacher">
-      <option value="none">Selecciona un docente</option>
-      {{#each teachers}}
-      <option value="{{this._id}}">{{this.name}}</option>
-      {{/each}}
+    <select name="teacher" id="teacher-selector">
+      <option>Selecciona un docente</option>
+<!--
+ Aquí se colocaran de forma dinámica los profesores según la escuela
+-->
     </select>
     <label for="period">Periodo</label>
     <input type="text" name="period" id="period">
@@ -20,10 +17,53 @@
 
 
 <script>
-  var teacher = []
+  var teachers_schools = []
+  teachers_schools.push({{{teachers}}})
+ 
 
-      teacher.push({{{teachers}}})
-  
-  
-  console.log(teacher)
+  function fillSchoolSelect(){
+    var school_selector = document.getElementById('school-selector')
+    var auxSchools = []
+
+    var option_node = document.createElement('option');
+    var text_option_node = document.createTextNode('Selecciona una escuela');
+    option_node.appendChild(text_option_node)
+    school_selector.appendChild(option_node)
+
+    for(var i=0;i<teachers_schools.length;i++){
+      if(auxSchools.indexOf(teachers_schools[i].idSchool.short_name)===-1){
+        auxSchools.push(teachers_schools[i].idSchool.short_name)
+
+        var option_node = document.createElement('option');
+        option_node.value = teachers_schools[i].idSchool.short_name
+        var text_option_node = document.createTextNode(teachers_schools[i].idSchool.short_name);
+        
+        option_node.appendChild(text_option_node)
+        school_selector.appendChild(option_node)
+      }
+
+    }
+  }
+
+  fillSchoolSelect()
+
+  function fillTeacherSelect(){
+    var teacher_selector = document.getElementById('teacher-selector')
+    var selected_school = document.getElementById('school-selector').value
+    teacher_selector.innerHTML = ''
+    var option_node = document.createElement('option');
+    var text_option_node = document.createTextNode('Selecciona un docente');
+    option_node.appendChild(text_option_node)
+    teacher_selector.appendChild(option_node)
+
+    for(var i=0;i<teachers_schools.length;i++){
+      if(teachers_schools[i].idSchool.short_name === selected_school){
+          var option_node = document.createElement('option');
+          option_node.value = teachers_schools[i].idSchool.short_name
+          var text_option_node = document.createTextNode(teachers_schools[i].name);
+          option_node.appendChild(text_option_node)
+          teacher_selector.appendChild(option_node)
+      }
+    }
+  }
 </script>
