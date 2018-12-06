@@ -211,4 +211,22 @@ router.get("/logout", (req, res) => {
   res.redirect('/');
 });
 
+
+/* ESTO NO SIRVE!!!!!! MAÑANA TEMPRANO LO ARREGLO */
+/* router.post('/profile', (req,res,next)=>{
+  //res.send(req.isAuthenticated())
+  //res.send(req.user)
+  console.log(req.isAuthenticated())
+
+  if(req.isAuthenticated() && req.user.role != ''){
+
+    res.render('auth/profile', req.user)
+
+    //res.send('Hay alguien loggeado')
+  } else{
+    //No hay ningún usuario loggeado
+    res.redirect('/auth/login')
+  }
+}) */
+
 module.exports = router;
