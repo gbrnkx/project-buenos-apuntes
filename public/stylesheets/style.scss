@@ -144,21 +144,22 @@ body {
 
 //Upload view
 #container-upload-data-input {
+    margin-top: 50px;
     border-radius: 15px;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    //flex-direction: column;
     justify-content: space-evenly;
-    height: 450px;
+    height: 500px;
     width: 600px;
     background-color: rgb(231, 234, 237);
 }
 
 #container-data-input {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 #div-school-subject-period {
@@ -168,10 +169,25 @@ body {
 }
 
 #input-title {
+    border-radius: 7px;
     height: 25px;
-    width: 400px;
+    width: 520px;
+}
+#input-abstract{
+    border-radius: 7px;
+    height: 40px;
+    width: 520px; 
+
 }
 
+#input-submit{
+    border-radius: 3px;
+    background-color: rgb(76, 205, 180);
+    height: 40px;
+    width: 520px; 
+    border: 1px solid white;
+    color: white;
+}
 #upload-apunte-button {
     border-radius: 3%;
     display: flex;

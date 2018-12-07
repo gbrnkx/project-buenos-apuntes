@@ -16,7 +16,7 @@
   <div class="university">
     <img src="/images/whiteUni.png"
       alt="">
-    <select class="select" name="school" id="school-selector" onchange="removeApuntes()">
+    <select class="select" name="school" id="school-selector" onchange="filterBySchool()">
     <option value="">Escuela</option>
     </select>
   </div>
@@ -24,7 +24,7 @@
   <div class="university">
     <img src="/images/whiteBooks.png"
       alt="">
-    <select class="select" name="school" id="subject-selector">
+    <select class="select" name="subject" id="subject-selector" onchange="filterBySubject()" >
       <option value="">Materia</option>
 
     </select>
@@ -33,7 +33,7 @@
   <div class="university">
     <img src="/images/whiteTeacher.png"
       alt="">
-    <select class="select" name="profesor" id="teacher-selector">
+    <select class="select" name="teacher" id="teacher-selector" onchange="filterByTeacher()">
       <option value="">Profesor</option>
 
     </select>
@@ -136,17 +136,25 @@
     }
   }
 
-  function removeApuntes(){
-    /*
-    console.log('removeApuntes()')
-    var apuntes = document.getElementById('apuntes-div')
-    apuntes.removeChild(apuntes.childNodes[0])
-    console.log(apuntes.children)
-    */
-  }
-
   fillSchoolSelect()
   fillTeacherSelect()
   fillSubjectSelect()
+
+  function filterBySchool(){
+    var school_selector = document.getElementById('school-selector')
+    console.log(school_selector.value)
+    window.location.href = '/auth/filterBy/'+school_selector.value
+  }
+
+    function filterBySubject(){
+    var subject_selector = document.getElementById('subject-selector')
+    console.log(subject_selector.value)
+    window.location.href = '/auth/filterBy/'+subject_selector.value
+  }
+    function filterByTeacher(){
+    var teacher_selector = document.getElementById('teacher-selector')
+    console.log(teacher_selector.value)
+    window.location.href = '/auth/filterBy/'+teacher_selector.value
+  }
 
 </script>

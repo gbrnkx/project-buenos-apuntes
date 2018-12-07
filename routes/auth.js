@@ -29,6 +29,17 @@ router.post('/results',(req,res,next)=>{
   })
 })
 
+router.get('/filterBy/:toSearch',(req,res,next)=>{
+  Apunte.find({"$text":{"$search": req.params.toSearch}}, {'_id':0,'title':1, 'school':1,'subject':1, 'teacher':1, 'fileURL':1})
+  .then(apuntes=>{
+    res.render('resultados', { apuntes })
+    //res.send(apuntes)
+  })
+  .catch(e=>{
+    res.send(e)
+  })
+})
+
 router.get('/test-results', (req,res,next)=>{
   Apunte.find()
   .then(apuntes=>{
@@ -50,21 +61,20 @@ router.post('/upload', uploadCloud.single('apunte'), (req, res, next)=>{
       idOwner:req.user._id,
       school:req.body.school,
       subject:req.body.subject,
-      period:req.body.period,
-      teacher:req.body.teacher
+      period:'OTOÑO 2018',
+      teacher:req.body.teacher,
+      abstract:req.body.abstract
     })
-    .then(apunte=>{
-      res.send(apunte)
+    .then(apuntes=>{
+
+      res.redirect('/')
     })
     .catch(e=>{
       res.send(e)
     })
   }
 //res.send(req.user)
-
-
 //res.send(req.file)
-
 })
 
 router.get('/upload', (req,res,next)=>{
@@ -73,8 +83,14 @@ router.get('/upload', (req,res,next)=>{
   console.log(req.isAuthenticated())
 
   if(req.isAuthenticated() && req.user.role != ''){
-
-    res.render('auth/upload', req.user)
+    Apunte.find({},{'_id':0,'title':1, 'school':1,'subject':1, 'teacher':1, 'fileURL':1})
+    .then(apuntes=>{
+      res.render('auth/upload', { apuntes })
+      //res.send(apuntes)
+    })
+    .catch(e=>{
+      res.send(e)
+    })
 
     //res.send('Hay alguien loggeado')
   } else{

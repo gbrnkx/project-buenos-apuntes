@@ -1,49 +1,190 @@
 <div id="container-upload-data-input">
-  <h2>Completa el formulario y carga tu apunte</h2>
+   
   <div id="container-data-input">
-
+    <h3>Completa el formulario y carga tu apunte</h3> <br>
     <form action="/auth/upload" method="POST" enctype="multipart/form-data">
+
       <div id="div-title">
         <label for="title">Título*</label><br>
         <input type="text" name="title" id="input-title" placeholder="pe. Fundamentos de Probabilidad">
       </div><br>
-      <div id="div-school-subject-period">
+    
         <div id="div-school">
           <label for="school">Escuela*</label><br>
-          <input type="text" name="school" id="input-school">
+          <select name="school" id="school-selector" onchange="enableInputText()">
+            <option value="">Escuela</option>
+          </select>
+          <input type="hidden" name="school" id="input-school" placeholder="Escribe aquí">
+
         </div>
+        <br>
+
         <div id="div-subject">
-          <label for="subject">Materia</label><br>
-          <input type="text" name="subject" id="input-subject">
+          <label for="subject">Materia*</label><br>
+          <select name="subject" id="subject-selector" onchange="enableInputText()">
+            <option value="">Materia</option>
+          </select>
+          <input type="hidden" name="subject" id="input-subject" placeholder="Escribe aquí">
         </div>
-        <div id="div-period">
-          <label for="period">Periodo</label><br>
-          <input type="text" name="period" id="input-period">
-        </div>
+        <br>
+
         <div id="div-teacher">
-          <label for="teacher">Profesor</label><br>
-          <input type="text" name="teacher" id="input-teacher">
+          <label for="teacher">Profesor*</label><br>
+          <select name="teacher" id="teacher-selector" onchange="enableInputText()">
+            <option value="">Profesor</option>
+          </select>
+          <input type="hidden" name="teacher" id="input-teacher" placeholder="Escribe aquí">
+        </div><br>
+        <input type="file" name="apunte" id="input-apunte" accept="*"><br><br>
+          <div id="div-period">
+          <label for="period">Resumen</label><br>
+          <input type="text" name="abstract" id="input-abstract" placeholder="Escribe tu súper resumen aquí">
         </div>
-      </div>
-        <input type="file" name="apunte" id="input-apunte" accept="*" onchange="showFiles()">
-      <div id="drop-area">
-        <p>Arrastra y suelta aquí tu apunte o busca la ruta si prefieres</p>
-        <input type="file"  name="testApunte" id="fileElem" accept="*"> 
-        <label class="button" for="fileElem">Examinar</label>
-      </div>
-      <input type="submit" name="" id="" value="SUBIR APUNTE">
+        <br>
+
+      <input type="submit" name="" id="input-submit" value="GUARDAR">
     </form>
 
 
   
     </div>
   </div>
-  <br>
-<!--
-  <div id="button-upload-apunte">
-    <button id="upload-apunte-button"> <img src="https://res.cloudinary.com/gbrnkx/image/upload/v1543904309/buenos-apuntes/logos/upload-icon.png" alt="upload-icon" height="27px" width="27px">SUBIR APUNTE</button>
-  </div>
--->
 
-<br><br>
-<script src="../javascripts/drag-and-drop.js"></script>
+<script>
+    var resultadosApuntes = []
+  resultadosApuntes.push({{{apuntes}}})
+  //console.log(resultadosApuntes)
+
+    function fillSchoolSelect(){
+    var school_selector = document.getElementById('school-selector')
+    school_selector.innerHTML = ''
+    var auxSchools = []
+
+    var option_node = document.createElement('option');
+    var text_option_node = document.createTextNode('Escuela');
+    option_node.appendChild(text_option_node)
+    school_selector.appendChild(option_node)
+
+    for(var i=0;i<resultadosApuntes.length;i++){
+      var school = resultadosApuntes[i].school
+      if(auxSchools.indexOf(school)===-1){
+        auxSchools.push(school)
+
+        var option_node = document.createElement('option');
+        option_node.value = school
+        var text_option_node = document.createTextNode(school);
+        
+        option_node.appendChild(text_option_node)
+        school_selector.appendChild(option_node)
+      }
+
+    }
+        var option_node = document.createElement('option');
+        //option_node.value = 'newSchool'
+        var text_option_node = document.createTextNode('+ NUEVA ESCUELA');
+        
+        option_node.appendChild(text_option_node)
+        school_selector.appendChild(option_node)
+  }
+
+    function fillTeacherSelect(){
+    var teacher_selector = document.getElementById('teacher-selector')
+    //console.log(teacher_selector)
+    teacher_selector.innerHTML = ''
+    var auxTeacher = []
+
+    var option_node = document.createElement('option');
+    var text_option_node = document.createTextNode('Profesor');
+    option_node.appendChild(text_option_node)
+    teacher_selector.appendChild(option_node)
+
+    for(var i=0;i<resultadosApuntes.length;i++){
+      var teacher = resultadosApuntes[i].teacher
+      if(auxTeacher.indexOf(teacher)===-1){
+        auxTeacher.push(teacher)
+
+        var option_node = document.createElement('option');
+        option_node.value = teacher
+        var text_option_node = document.createTextNode(teacher);
+        
+        option_node.appendChild(text_option_node)
+        teacher_selector.appendChild(option_node)
+      }
+
+    }
+                var option_node = document.createElement('option');
+        //option_node.value = 'newSchool'
+        var text_option_node = document.createTextNode('+ NUEVO PROFESOR');
+        option_node.appendChild(text_option_node)
+        teacher_selector.appendChild(option_node)
+  }
+
+
+
+    function fillSubjectSelect(){
+    var subject_selector = document.getElementById('subject-selector')
+    //console.log(teacher_selector)
+    subject_selector.innerHTML = ''
+    var auxSubject = []
+
+    var option_node = document.createElement('option');
+    var text_option_node = document.createTextNode('Materia');
+    option_node.appendChild(text_option_node)
+    subject_selector.appendChild(option_node)
+
+    for(var i=0;i<resultadosApuntes.length;i++){
+      var subject = resultadosApuntes[i].subject
+      if(auxSubject.indexOf(subject)===-1){
+        auxSubject.push(subject)
+
+        var option_node = document.createElement('option');
+        option_node.value = subject
+        var text_option_node = document.createTextNode(subject);
+        
+        option_node.appendChild(text_option_node)
+        subject_selector.appendChild(option_node)
+      }
+
+    }
+                    var option_node = document.createElement('option');
+        //option_node.value = 'newSchool'
+        var text_option_node = document.createTextNode('+ NUEVA MATERIA');
+        option_node.appendChild(text_option_node)
+        subject_selector.appendChild(option_node)
+  }
+
+  function enableInputText(){
+    var school_input = document.getElementById('input-school')
+    var school_selector = document.getElementById('school-selector')
+
+    if(school_selector.value != '+ NUEVA ESCUELA'){
+      school_input.setAttribute('type','hidden') 
+    } else{
+      school_input.setAttribute('type','text')  
+    }
+
+    var subject_input = document.getElementById('input-subject')
+    var subject_selector = document.getElementById('subject-selector')
+
+    if(subject_selector.value != '+ NUEVA MATERIA'){
+      subject_input.setAttribute('type','hidden') 
+    } else{
+      subject_input.setAttribute('type','text')  
+    }
+
+    var teacher_input = document.getElementById('input-teacher')
+    var teacher_selector = document.getElementById('teacher-selector')
+
+    if(teacher_selector.value != '+ NUEVO PROFESOR'){
+      teacher_input.setAttribute('type','hidden') 
+    } else{
+      teacher_input.setAttribute('type','text')  
+    }
+
+
+  }
+
+  fillSchoolSelect()
+  fillTeacherSelect()
+  fillSubjectSelect()
+</script>

@@ -55,7 +55,9 @@ document.addEventListener('keyup', function(e) {
     }
 })
 
+/*
 document.getElementById('upLoad').addEventListener('click', function() {
     document.getElementById('toUploadCloud').click()
 
 })
+*/
