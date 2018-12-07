@@ -22,7 +22,7 @@ body {
   width: 100%;
   margin-top: -10px;
   margin-left: -10px;
-  background-color: #2d5181;
+  background-color: #352c5a;
   font-family: 'Raleway'; }
 
 #logo-top-left {
@@ -40,6 +40,11 @@ body {
   width: 70vw;
   max-width: 50%;
   font-family: 'Raleway'; }
+
+#nav-header a {
+  font-size: 1.8vh;
+  font-family: 'Raleway';
+  font-weight: 900; }
 
 .text-nav {
   color: white;
@@ -287,14 +292,18 @@ header {
 header input {
   width: 80%;
   height: 4vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(245, 245, 245, 0.842);
+  color: rgba(53, 44, 90, 0.9);
   margin: 8%;
   border: 0;
   padding: 1vw;
   font-size: 1.7em;
-  color: whitesmoke;
   border-radius: 20px;
   outline-color: rgba(0, 0, 0, 0); }
+
+header input::-webkit-input-placeholder {
+  color: rgba(53, 44, 90, 0.829);
+  font-weight: 400; }
 
 header div {
   background-color: rgba(0, 0, 0, 0.4);
@@ -378,7 +387,7 @@ header div {
   align-items: center; }
 
 .searchText {
-  color: black;
+  color: whitesmoke;
   font-size: 2vw;
   font-size: 4vmin;
   width: 27%; }
@@ -389,14 +398,18 @@ header div {
 .searchInput input {
   height: 6vh;
   width: 60vw;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(245, 245, 245, 0.842);
+  color: rgba(53, 44, 90, 0.9);
   border-radius: 13px;
   border: 0;
   font-size: 3.2vmin;
   font-size: 2vmax;
   padding: 1vh;
-  color: whitesmoke;
   outline-color: rgba(0, 0, 0, 0); }
+
+.searchInput input::-webkit-input-placeholder {
+  color: rgba(53, 44, 90, 0.829);
+  font-weight: 400; }
 
 .filtros {
   display: flex;
@@ -450,7 +463,22 @@ header div {
   display: flex;
   flex-direction: column;
   border-radius: 13px;
-  color: white; }
+  color: white;
+  margin-bottom: 3vh; }
+
+.downPreview a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.7em;
+  font-weight: 700; }
+
+.downPreview button {
+  background-color: #00d7b3;
+  margin: 1vh 1.3vw;
+  padding: 1vh;
+  border: 1px solid white;
+  width: 20vw;
+  height: auto; }
 
 .upCard {
   display: flex;
@@ -531,14 +559,41 @@ p {
   margin: 30px 1px;
   height: 4vh;
   font-size: 1.5em;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(245, 245, 245, 0.842);
+  color: rgba(53, 44, 90, 0.9);
   border-radius: 13px;
   border: 0;
   outline-color: rgba(0, 0, 0, 0);
   padding-left: 10px; }
 
+#form-container input::-webkit-input-placeholder {
+  color: rgba(53, 44, 90, 0.829);
+  font-weight: 400; }
+
 #form-container p {
   font-size: 1.3em; }
+
+footer {
+  /* width: 100vw; */
+  background-color: #009b9f;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  padding: 3vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10vh;
+  font-size: 2vh; }
+
+footer div {
+  width: 30%;
+  min-width: 300px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+footer img {
+  width: 20vh; }
 
 /*# sourceMappingURL=style.css.map */
